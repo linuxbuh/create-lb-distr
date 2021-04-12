@@ -2,6 +2,11 @@
 
 #Скрипт создания дистров LinuBuh
 
+echo
+while [ -n "$1" ]
+do
+case "$1" in
+-lb-base-de)
 #Подключаем репозиторий linuxbuh
 
 eselect repository add linuxbuh git https://github.com/linuxbuh/linuxbuh.git
@@ -28,12 +33,10 @@ rc-update add sshd default
 rc-update add xdm boot
 rc-update add calculate-core boot
 
-echo
-while [ -n "$1" ]
-do
-case "$1" in
+;;
+
 #для tde
--tde-base)
+-tde)
 #Подключаем репозиторий tde
 eselect repository add trinity-official git https://mirror.git.trinitydesktop.org/gitea/TDE/tde-packaging-gentoo.git
 
