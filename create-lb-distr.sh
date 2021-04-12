@@ -18,12 +18,12 @@ mkdir -p /etc/portage/package.use
 touch /etc/portage/package.accept_keywords/custom
 touch /etc/portage/package.use/custom
 cp -f /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
+cat /var/db/repos/linuxbuh/profiles/package.accept_keywords.lb-base-de | tee -a /etc/portage/package.accept_keywords/custom
+cat /var/db/repos/linuxbuh/profiles/package.use.lb-base-de | tee -a /etc/portage/package.use/custom
 
 #установливаем пакеты
 emerge @lb-base-de
 
-#Добавляем в /etc/portage/package.use флаги сборки для sys-apps/#calculate-utils
-echo "sys-apps/calculate-utils backup client console dbus desktop gpg install qt5" >> /etc/portage/package.use/custom
 emerge sys-apps/calculate-utils
 
 rc-update add NetworkManager default
