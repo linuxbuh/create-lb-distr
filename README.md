@@ -1,2 +1,2 @@
 # create-lb-distr
-Скрипт создания дистров LinuBuh
+Скрипт создания дистров LinuxBuh
