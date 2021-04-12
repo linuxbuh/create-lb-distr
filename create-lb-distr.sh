@@ -13,11 +13,11 @@ eselect repository add linuxbuh git https://github.com/linuxbuh/linuxbuh.git
 emaint sync -r linuxbuh && eix-sync && eix-update
 
 #Внести правки из репы https://github.com/linuxbuh/linuxbuh.git
-mkdir /etc/portage/package.accept_keywords
-mkdir /etc/portage/package.use
+mkdir -p /etc/portage/package.accept_keywords
+mkdir -p /etc/portage/package.use
 touch /etc/portage/package.accept_keywords/custom
 touch /etc/portage/package.use/custom
-cp -f /tmp/tde/etc/portage/sets/* /etc/portage/sets/
+cp -f /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
 
 #установливаем пакеты
 emerge @lb-base-de
