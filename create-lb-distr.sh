@@ -39,17 +39,13 @@ rc-update add calculate-core boot
 -lb-tde-base)
 #Подключаем репозиторий tde
 eselect repository add trinity-official git https://mirror.git.trinitydesktop.org/gitea/TDE/tde-packaging-gentoo.git
-
+#Внести правки из репы https://github.com/linuxbuh/linuxbuh-tde.git
+eselect repository add linuxbuh-tde git https://github.com/linuxbuh/linuxbuh-tde.git
 #Синкаем репозиторий tde
-emaint sync -r trinity-official && eix-sync && eix-update
+emaint sync -r trinity-official && emaint sync -r linuxbuh-tde && eix-sync && eix-update
 
 #Копируем файл
 cat /var/db/repos/trinity-official/Documentation/trinity.live.keywords | tee -a /etc/portage/package.accept_keywords/custom
-
-#Внести правки из репы https://github.com/linuxbuh/linuxbuh-tde.git
-eselect repository add linuxbuh-tde git https://github.com/linuxbuh/linuxbuh-tde.git
-emaint sync -r linuxbuh-tde && eix-sync && eix-update
-
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
 #cp -f -r /var/db/repos/linuxbuh-tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
