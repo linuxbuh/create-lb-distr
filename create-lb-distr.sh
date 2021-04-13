@@ -48,8 +48,8 @@ emaint sync -r trinity-official && emaint sync -r linuxbuh-tde && eix-sync && ei
 mkdir -p /etc/portage/package.accept_keywords
 mkdir -p /etc/portage/package.use
 cat /var/db/repos/trinity-official/Documentation/trinity.live.keywords | tee -a /etc/portage/package.accept_keywords/custom
-cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/package.accept_keywords/custom
-cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
+cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom-live | tee -a /etc/portage/package.accept_keywords/custom
+cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom-live | tee -a /etc/portage/package.use/custom
 #cp -f -r /var/db/repos/linuxbuh-tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
 #cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/* /var/db/repos/trinity-official/trinity-base/
 cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
@@ -97,7 +97,7 @@ emerge @lb-tde-meta-live
 
 ;;
 
--lb-tde-update)
+-lb-tde-update-live)
 #При обновлении tde запустить 
 emerge -av1 tqt tqtinterface dbus-1-tqt arts tdelibs && emerge -av1 `equery depends tdelibs|awk '{print " ="$1}'`
 ;;
