@@ -4,7 +4,7 @@
 echo 'LINGUAS="en ru"' >> /etc/portage/make.conf/custom
 #или
 echo 'L10N="en ru"' >> /etc/portage/make.conf/custom
-#emerge -uDNa world
+emerge -uDNa world
 
 #Скрипт создания дистров LinuBuh
 
