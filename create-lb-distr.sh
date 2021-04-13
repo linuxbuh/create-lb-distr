@@ -52,6 +52,7 @@ cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/cust
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
 #cp -f -r /var/db/repos/linuxbuh-tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
 #cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/* /var/db/repos/trinity-official/trinity-base/
+cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
 cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base /etc/portage/sets/lb-tde-base
 cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta /etc/portage/sets/lb-tde-meta
 
