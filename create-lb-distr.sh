@@ -35,8 +35,8 @@ rc-update add calculate-core boot
 
 ;;
 
-#для tde
--lb-tde-base)
+#для lb-tde-base-live
+-lb-tde-base-live)
 #Подключаем репозиторий tde
 eselect repository add trinity-official git https://mirror.git.trinitydesktop.org/gitea/TDE/tde-packaging-gentoo.git
 #Внести правки из репы https://github.com/linuxbuh/linuxbuh-tde.git
@@ -85,7 +85,7 @@ cp -f /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Des
 ;;
 
 #для tde-meta
--lb-tde-meta)
+-lb-tde-meta-live)
 
 emerge @lb-tde-meta
 
