@@ -6,7 +6,7 @@ echo
 while [ -n "$1" ]
 do
 case "$1" in
--lb-base-de)
+-lb-base-desktop)
 #Подключаем репозиторий linuxbuh
 
 eselect repository add linuxbuh git https://github.com/linuxbuh/linuxbuh.git
@@ -18,11 +18,11 @@ mkdir -p /etc/portage/package.use
 touch /etc/portage/package.accept_keywords/custom
 touch /etc/portage/package.use/custom
 cp -f /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
-cat /var/db/repos/linuxbuh/profiles/package.accept_keywords.lb-base-de | tee -a /etc/portage/package.accept_keywords/custom
-cat /var/db/repos/linuxbuh/profiles/package.use.lb-base-de | tee -a /etc/portage/package.use/custom
+cat /var/db/repos/linuxbuh/profiles/package.accept_keywords.lb-base-desktop | tee -a /etc/portage/package.accept_keywords/custom
+cat /var/db/repos/linuxbuh/profiles/package.use.lb-base-desktop | tee -a /etc/portage/package.use/custom
 
 #установливаем пакеты
-emerge @lb-base-de
+emerge @lb-base-desktop
 
 emerge sys-apps/calculate-utils
 
@@ -46,23 +46,22 @@ emaint sync -r trinity-official && eix-sync && eix-update
 #Копируем файл
 cat /var/db/repos/trinity-official/Documentation/trinity.live.keywords | tee -a /etc/portage/package.accept_keywords/custom
 
-#Внести правки из репы https://github.com/linuxbuh/tde.git
-cd /tmp
-git clone https://github.com/linuxbuh/tde.git
-cd /tmp/tde && git pull
-cat /tmp/tde/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/package.accept_keywords/custom
-cat /tmp/tde/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
-cp -f -r /tmp/tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
-cp -f -r /tmp/tde/trinity-base/* /var/db/repos/trinity-official/trinity-base/
-cp -f -r /tmp/tde/usr/bin/* /usr/bin/
-cp -f -r /tmp/tde/etc/portage/sets/lb-tde-base /etc/portage/sets/lb-tde-base
-cp -f -r /tmp/tde/etc/portage/sets/lb-tde-meta /etc/portage/sets/lb-tde-meta
+#Внести правки из репы https://github.com/linuxbuh/linuxbuh-tde.git
+eselect repository add linuxbuh-tde git https://github.com/linuxbuh/linuxbuh-tde.git
+emaint sync -r linuxbuh-tde && eix-sync && eix-update
+
+cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/package.accept_keywords/custom
+cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
+cp -f -r /var/db/repos/linuxbuh-tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
+cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/* /var/db/repos/trinity-official/trinity-base/
+cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base /etc/portage/sets/lb-tde-base
+cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta /etc/portage/sets/lb-tde-meta
 
 #для tde-base
 emerge @lb-tde-base
 
 #Создаем шаблон /etc/conf.d/xdm.clt чтобы не затерлось при обновлении #кальки
-cp -f /tmp/tde/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
+cp -f /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
 
 #Копируем шаблон /etc/conf.d/xdm.clt в /etc/conf.d/xdm
 cp -f /etc/conf.d/xdm.clt /etc/conf.d/xdm
@@ -79,10 +78,10 @@ cp -f /etc/conf.d/xdm.clt /etc/conf.d/xdm
 #			PIDFILE=/run/tdm.pid
 #			;;
 #или патчим
-patch /etc/init.d/xdm < /tmp/tde/etc/init.d/xdm.patch
+patch /etc/init.d/xdm < /var/db/repos/linuxbuh-tde/profiles/etc/init.d/xdm.patch
 
 #Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
-cp -f /tmp/tde/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
+cp -f /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 
 ;;
 
