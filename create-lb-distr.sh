@@ -51,8 +51,9 @@ cd /tmp
 git clone https://github.com/linuxbuh/tde.git
 cat /tmp/tde/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/package.accept_keywords/custom
 cat /tmp/tde/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
-cp -f /tmp/tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps
-cp -f /tmp/tde/trinity-base/* /var/db/repos/trinity-official/trinity-base
+cp -f -r /tmp/tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
+cp -f -r /tmp/tde/trinity-base/* /var/db/repos/trinity-official/trinity-base/
+cp -f -r /tmp/tde/etc/portage/sets/* /etc/portage/sets/
 
 #для tde-base
 emerge @lb-tde-base
