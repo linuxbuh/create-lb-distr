@@ -2,6 +2,7 @@
 
 #Убираем лишние языки
 echo 'LINGUAS="en ru"' >> /etc/portage/make.conf/custom
+emerge -uDNa world
 
 #Скрипт создания дистров LinuBuh
 
