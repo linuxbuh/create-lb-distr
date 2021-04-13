@@ -53,7 +53,7 @@ cat /tmp/tde/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/pa
 cat /tmp/tde/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
 cp -f -r /tmp/tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
 cp -f -r /tmp/tde/trinity-base/* /var/db/repos/trinity-official/trinity-base/
-cp -f -r /tmp/tde/etc/portage/sets/* /etc/portage/sets/
+cp -f -r /tmp/tde/etc/portage/sets/lb-tde-base /etc/portage/sets/lb-tde-base
 
 #для tde-base
 emerge @lb-tde-base
@@ -85,7 +85,7 @@ cp -f /tmp/tde/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trini
 
 #для tde-meta
 -tde-meta)
-
+cp -f -r /tmp/tde/etc/portage/sets/lb-tde-meta /etc/portage/sets/lb-tde-meta
 emerge @lb-tde-meta
 
 #Необходимо разобраться с trinity-base/tdemultimedia-meta-9999, не #собираются пакеты trinity-base/tdemultimedia-tdeioslaves-9999 и #trinity-base/tdemultimedia-arts-9999
