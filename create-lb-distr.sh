@@ -53,11 +53,11 @@ cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom | tee -a 
 #cp -f -r /var/db/repos/linuxbuh-tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
 #cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/* /var/db/repos/trinity-official/trinity-base/
 cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
-cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base /etc/portage/sets/lb-tde-base
-cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta /etc/portage/sets/lb-tde-meta
+cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base-live /etc/portage/sets/lb-tde-base-live
+cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-live /etc/portage/sets/lb-tde-meta-live
 
 #для tde-base
-emerge @lb-tde-base
+emerge @lb-tde-base-live
 
 #Создаем шаблон /etc/conf.d/xdm.clt чтобы не затерлось при обновлении #кальки
 cp -f /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
@@ -87,7 +87,7 @@ cp -f /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Des
 #для tde-meta
 -lb-tde-meta-live)
 
-emerge @lb-tde-meta
+emerge @lb-tde-meta-live
 
 #Необходимо разобраться с trinity-base/tdemultimedia-meta-9999, не #собираются пакеты trinity-base/tdemultimedia-tdeioslaves-9999 и #trinity-base/tdemultimedia-arts-9999
 
