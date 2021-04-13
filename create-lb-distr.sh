@@ -23,7 +23,7 @@ mkdir -p /etc/portage/package.accept_keywords
 mkdir -p /etc/portage/package.use
 touch /etc/portage/package.accept_keywords/custom
 touch /etc/portage/package.use/custom
-cp -f /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
+cp -r /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
 cat /var/db/repos/linuxbuh/profiles/package.accept_keywords.lb-base-desktop | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh/profiles/package.use.lb-base-desktop | tee -a /etc/portage/package.use/custom
 
@@ -56,9 +56,7 @@ mkdir -p /etc/portage/package.use
 cat /var/db/repos/trinity-official/Documentation/trinity.live.keywords | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom-live | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom-live | tee -a /etc/portage/package.use/custom
-#cp -f -r /var/db/repos/linuxbuh-tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
-#cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/* /var/db/repos/trinity-official/trinity-base/
-cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
+cp -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
 cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base-live /etc/portage/sets/lb-tde-base-live
 cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-live /etc/portage/sets/lb-tde-meta-live
 
@@ -66,10 +64,10 @@ cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-live /
 emerge @lb-tde-base-live
 
 #Создаем шаблон /etc/conf.d/xdm.clt чтобы не затерлось при обновлении #кальки
-cp -f /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
 
 #Копируем шаблон /etc/conf.d/xdm.clt в /etc/conf.d/xdm
-cp -f /etc/conf.d/xdm.clt /etc/conf.d/xdm
+cp -r /etc/conf.d/xdm.clt /etc/conf.d/xdm
 
 #Добавить в файл /etc/init.d/xdm после строк 
 #kdm|kde)
@@ -86,7 +84,7 @@ cp -f /etc/conf.d/xdm.clt /etc/conf.d/xdm
 patch /etc/init.d/xdm < /var/db/repos/linuxbuh-tde/profiles/etc/init.d/xdm.patch
 
 #Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
-cp -f /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
+cp -r /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 
 ;;
 
@@ -127,18 +125,18 @@ mkdir -p /etc/portage/package.accept_keywords
 mkdir -p /etc/portage/package.use
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom-14.0.8 | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom-14.0.8 | tee -a /etc/portage/package.use/custom
-cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
-cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base-14.0.8 /etc/portage/sets/lb-tde-base
-cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-14.0.8 /etc/portage/sets/lb-tde-meta
+cp -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base-14.0.8 /etc/portage/sets/lb-tde-base
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-14.0.8 /etc/portage/sets/lb-tde-meta
 
 #для tde-base
 emerge @lb-tde-base
 
 #Создаем шаблон /etc/conf.d/xdm.clt чтобы не затерлось при обновлении #кальки
-cp -f /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
 
 #Копируем шаблон /etc/conf.d/xdm.clt в /etc/conf.d/xdm
-cp -f /etc/conf.d/xdm.clt /etc/conf.d/xdm
+cp -r /etc/conf.d/xdm.clt /etc/conf.d/xdm
 
 #Добавить в файл /etc/init.d/xdm после строк 
 #kdm|kde)
@@ -155,7 +153,7 @@ cp -f /etc/conf.d/xdm.clt /etc/conf.d/xdm
 patch /etc/init.d/xdm < /var/db/repos/linuxbuh-tde/profiles/etc/init.d/xdm.patch
 
 #Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
-cp -f /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
+cp -r /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 
 ;;
 
