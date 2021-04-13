@@ -1,9 +1,9 @@
 #!/bin/sh
 
 #Убираем лишние языки
-#echo 'LINGUAS="en ru"' >> /etc/portage/make.conf/custom
+echo 'LINGUAS="en ru"' >> /etc/portage/make.conf/custom
 #или
-#echo 'L10N="en ru"' >> /etc/portage/make.conf/custom
+echo 'L10N="en ru"' >> /etc/portage/make.conf/custom
 #emerge -uDNa world
 
 #Скрипт создания дистров LinuBuh
