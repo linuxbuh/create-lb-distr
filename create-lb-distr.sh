@@ -94,7 +94,7 @@ emerge @lb-tde-meta
 
 ;;
 
--tde-update)
+-lb-tde-update)
 #При обновлении tde запустить 
 emerge -av1 tqt tqtinterface dbus-1-tqt arts tdelibs && emerge -av1 `equery depends tdelibs|awk '{print " ="$1}'`
 ;;
