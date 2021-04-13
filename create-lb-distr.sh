@@ -22,6 +22,8 @@ cat /var/db/repos/linuxbuh/profiles/package.accept_keywords.lb-base-desktop | te
 cat /var/db/repos/linuxbuh/profiles/package.use.lb-base-desktop | tee -a /etc/portage/package.use/custom
 
 #установливаем пакеты
+emerge @lb-base-desktop --autounmask-write
+dispatch-conf
 emerge @lb-base-desktop
 
 emerge sys-apps/calculate-utils
