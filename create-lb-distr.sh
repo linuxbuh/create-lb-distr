@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#Убираем лишние языки
+echo 'LINGUAS="en ru"' >> /etc/portage/make.conf/custom
+
 #Скрипт создания дистров LinuBuh
 
 echo
