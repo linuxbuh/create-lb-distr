@@ -49,6 +49,7 @@ cat /var/db/repos/trinity-official/Documentation/trinity.live.keywords | tee -a 
 #Внести правки из репы https://github.com/linuxbuh/tde.git
 cd /tmp
 git clone https://github.com/linuxbuh/tde.git
+cd /tmp/tde && git pull
 cat /tmp/tde/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/package.accept_keywords/custom
 cat /tmp/tde/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
 cp -f -r /tmp/tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
