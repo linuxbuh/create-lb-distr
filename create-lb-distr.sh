@@ -54,6 +54,7 @@ cat /tmp/tde/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/pa
 cat /tmp/tde/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
 cp -f -r /tmp/tde/trinity-apps/* /var/db/repos/trinity-official/trinity-apps/
 cp -f -r /tmp/tde/trinity-base/* /var/db/repos/trinity-official/trinity-base/
+cp -f -r /tmp/tde/usr/bin/* /usr/bin/
 cp -f -r /tmp/tde/etc/portage/sets/lb-tde-base /etc/portage/sets/lb-tde-base
 cp -f -r /tmp/tde/etc/portage/sets/lb-tde-meta /etc/portage/sets/lb-tde-meta
 
