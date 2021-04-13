@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-base-desktop -f -v ON 
+#cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-base-desktop -f -v ON 
 
 cl-builder-update --id lb-base-desktop --scan ON -f
 

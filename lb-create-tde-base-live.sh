@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-tde-base-live -f -v ON 
+#cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-tde-base-live -f -v ON 
 
 cl-builder-update --id lb-tde-base-live --scan ON -f
 
