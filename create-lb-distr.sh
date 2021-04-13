@@ -45,6 +45,8 @@ eselect repository add linuxbuh-tde git https://github.com/linuxbuh/linuxbuh-tde
 emaint sync -r trinity-official && emaint sync -r linuxbuh-tde && eix-sync && eix-update
 
 #Копируем файл
+mkdir -p /etc/portage/package.accept_keywords
+mkdir -p /etc/portage/package.use
 cat /var/db/repos/trinity-official/Documentation/trinity.live.keywords | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
