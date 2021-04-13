@@ -102,6 +102,74 @@ emerge @lb-tde-meta-live
 emerge -av1 tqt tqtinterface dbus-1-tqt arts tdelibs && emerge -av1 `equery depends tdelibs|awk '{print " ="$1}'`
 ;;
 
+-lb-tde-update-lang-live)
+#При обновлении tde запустить 
+emerge --oneshot =tde-i18n-9999
+;;
+
+#для lb-tde-base
+-lb-tde-base)
+#Подключаем репозиторий tde
+eselect repository add trinity-official git https://mirror.git.trinitydesktop.org/gitea/TDE/tde-packaging-gentoo.git
+#Внести правки из репы https://github.com/linuxbuh/linuxbuh-tde.git
+eselect repository add linuxbuh-tde git https://github.com/linuxbuh/linuxbuh-tde.git
+#Синкаем репозиторий tde
+emaint sync -r trinity-official && emaint sync -r linuxbuh-tde && eix-sync && eix-update
+
+#Копируем файл
+mkdir -p /etc/portage/package.accept_keywords
+mkdir -p /etc/portage/package.use
+cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom-14.0.8 | tee -a /etc/portage/package.accept_keywords/custom
+cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom-14.0.8 | tee -a /etc/portage/package.use/custom
+cp -f -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
+cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base-14.0.8 /etc/portage/sets/lb-tde-base
+cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-14.0.8 /etc/portage/sets/lb-tde-meta
+
+#для tde-base
+emerge @lb-tde-base
+
+#Создаем шаблон /etc/conf.d/xdm.clt чтобы не затерлось при обновлении #кальки
+cp -f /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
+
+#Копируем шаблон /etc/conf.d/xdm.clt в /etc/conf.d/xdm
+cp -f /etc/conf.d/xdm.clt /etc/conf.d/xdm
+
+#Добавить в файл /etc/init.d/xdm после строк 
+#kdm|kde)
+#			EXE=/usr/bin/kdm
+#			PIDFILE=/run/kdm.pid
+#			;;
+#
+#Кусок
+#tdm|tde)
+#			EXE=/usr/trinity/14/bin/tdm
+#			PIDFILE=/run/tdm.pid
+#			;;
+#или патчим
+patch /etc/init.d/xdm < /var/db/repos/linuxbuh-tde/profiles/etc/init.d/xdm.patch
+
+#Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
+cp -f /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
+
+;;
+
+#для tde-meta
+-lb-tde-meta)
+
+emerge @lb-tde-meta
+
+;;
+
+-lb-tde-update)
+#При обновлении tde запустить 
+emerge -av1 tqt tqtinterface dbus-1-tqt arts tdelibs && emerge -av1 `equery depends tdelibs|awk '{print " ="$1}'`
+;;
+
+-lb-tde-update-lang)
+#При обновлении tde запустить 
+emerge --oneshot tde-i18n
+;;
+
 #Устанавливаем добро
 
 -lb-apps-network)
