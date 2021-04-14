@@ -179,8 +179,26 @@ emerge --oneshot tde-i18n
 -lb-apps-network)
 eselect repository enable torbrowser
 emaint sync -r torbrowser && eix-sync && eix-update
+
+echo "
+net-im/rambox-bin
+app-crypt/cryptoprocsp
+www-plugins/cades
+net-misc/anydesk
+www-client/torbrowser-launcher
+" >> /etc/portage/package.accept_keywords/custom
+
+echo "
+app-crypt/gpgme python
+" >> /etc/portage/package.use/custom
+
 emerge @lb-apps-network
 rc-update add anydesk default
+
+echo "
+rc_hotplug="pcscd"
+" >> /etc/rc.conf
+
 ;;
 
 -lb-apps-1c)
@@ -192,6 +210,12 @@ rc-update add multipath boot
 ;;
 
 -lb-apps-office)
+
+echo "
+app-office/onlyoffice-bin
+media-gfx/vuescan
+" >> /etc/portage/package.accept_keywords/custom
+
 emerge @lb-apps-office
 ;;
 
@@ -235,6 +259,10 @@ virtual/dde-wm
 dev-cpp/gtest
 #зависимость для dde-kwin
 kde-frameworks/extra-cmake-modules
+#нужен для dde-control-center-5.4.9-r1
+net-libs/libnma
+#нужен для dde-control-center-5.4.9-r1
+dev-qt/qdbusviewer
 " >> /etc/portage/package.accept_keywords/custom
 
 echo "x11-misc/lightdm qt5
@@ -261,6 +289,26 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 emerge -av dde-extra/deepin-editor dde-extra/deepin-compressor dde-extra/deepin-calculator
 
+;;
+
+-lb-pantheon)
+
+echo "x11-misc/plank
+pantheon-base/pantheon-settings
+" >> /etc/portage/package.accept_keywords/custom
+;;
+
+-lb-xfce)
+
+#Делаем на основе CLDX
+emerge -C chromium libreoffice x11-themes/claws-mail-theme-calculate media-gfx/calculate-wallpapers mail-client/claws-mail
+
+
+;;
+
+-lb-lxde)
+
+emerge -av lxde-base/lxde-meta media-gfx/lxdm-themes-calculate lxde-base/lxdm 
 
 ;;
 
