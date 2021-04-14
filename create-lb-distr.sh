@@ -241,6 +241,7 @@ echo "x11-misc/lightdm qt5
 dev-libs/libxslt python
 virtual/dde-wm kwin
 dde-base/dde-meta -terminal
+#Возможно нужно персобрать для сборки dde-kwin
 #dev-util/cmake qt5
 " >> /etc/portage/package.use/custom
 
