@@ -231,6 +231,7 @@ x11-wm/dde-kwin
 app-accessibility/onboard
 dev-libs/disomaster
 virtual/dde-wm
+#зависимость для dtkcore
 dev-cpp/gtest
 
 " >> /etc/portage/package.accept_keywords/custom
