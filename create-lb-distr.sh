@@ -210,6 +210,7 @@ cl-update -o
 emerge -av dde-meta
 dispatch-conf
 
+#надо вичистить
 echo "app-accessibility/onboard
 dev-go/dbus-factory
 media-video/deepin-movie-reborn
@@ -243,12 +244,36 @@ dde-base/dtkwidget
 sys-apps/lshw
 x11-libs/bamf
 x11-wm/dde-kwin
+dev-go/dbus-factory
+media-video/deepin-movie-reborn
+dev-go/deepin-go-lib
+app-accessibility/onboard
+media-gfx/blur-effect
+x11-apps/xcur2png
+dev-go/go-dbus-generator
+dev-go/go-gir-generator
+dev-libs/dde-wayland
+dev-go/go-x11-client
+dev-go/go-dbus-factory
+dde-base/deepin-menu
+dde-base/dde-qt5integration
+dde-base/dde-dock
+dde-base/deepin-desktop-base
+dde-base/deepin-desktop-schemas
+gnome-base/gnome-keyring
+dev-cpp/htmlcxx
+x11-wm/dde-kwin
+virtual/dde-wm
+dev-libs/disomaster
 " >> /etc/portage/package.accept_keywords/deepin
 
 echo "x11-misc/lightdm qt5
 dev-libs/libxslt python
 virtual/dde-wm kwin
 " >> /etc/portage/package.use/deepin
+
+#правим файл dde-base/dpa-ext-gnomekeyring-5.0.4.ebuild и dde-base/startdde-5.8.4.ebuild
+#меняем строку   gnome-base/libgnome-keyring на gnome-base/gnome-keyring
 
 emerge dde-meta lightdm
 
