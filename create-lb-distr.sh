@@ -233,13 +233,15 @@ dev-libs/disomaster
 virtual/dde-wm
 #зависимость для dtkcore
 dev-cpp/gtest
-
+#зависимость для dde-kwin
+kde-frameworks/extra-cmake-modules
 " >> /etc/portage/package.accept_keywords/custom
 
 echo "x11-misc/lightdm qt5
 dev-libs/libxslt python
 virtual/dde-wm kwin
 dde-base/dde-meta -terminal
+#dev-util/cmake qt5
 " >> /etc/portage/package.use/custom
 
 #gnome-base/libgnome-keyring-3.12.0-r3
