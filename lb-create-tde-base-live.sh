@@ -10,4 +10,4 @@ cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/
 bash /tmp/create-lb-distr.sh -lb-base-desktop -lb-tde-base-live 
 exit
 
-cl-builder-image --id lb-tde-base-live -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-tde-base-live-`date +%Y%m%d`-x86_64.iso -f
+cl-builder-image --id lb-tde-base-live -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-tde-base-live-`date +%Y%m%d`-x86_64.iso -f

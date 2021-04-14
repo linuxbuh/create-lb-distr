@@ -195,6 +195,60 @@ rc-update add multipath boot
 emerge @lb-apps-office
 ;;
 
+-deepin)
+
+eselect repository enable deepin
+
+mkdir -p /etc/portage/package.accept_keywords
+mkdir -p /etc/portage/package.use
+echo "dde-*/*" >> /etc/portage/package.accept_keywords/deepin
+echo "dev-qt/*" >> /etc/portage/package.accept_keywords/deepin
+
+emaint sync -r deepin && eix-sync && eix-update
+cl-update -o
+
+emerge -av dde-meta
+
+echo "app-accessibility/onboard
+dev-go/dbus-factory
+media-video/deepin-movie-reborn
+sys-apps/lshw
+x11-apps/xcur2png
+x11-wm/deepin-metacity
+dev-go/go-dbus-factory
+dev-go/go-dbus-generator
+virtual/dde-wm
+x11-libs/gsettings-qt
+dev-libs/disomaster
+media-gfx/blur-effect
+dev-go/go-x11-client
+dev-go/deepin-go-lib
+dev-go/go-gir-generator
+x11-libs/bamf
+x11-wm/dde-kwin
+" >> /etc/portage/package.accept_keywords/deepin
+
+echo "x11-misc/lightdm qt5
+dev-libs/libxslt python
+virtual/dde-wm kwin
+" >> /etc/portage/package.use/deepin
+
+emerge dde-meta lightdm
+
+rc-update add dbus default
+rc-update add xdm default
+rc-update add NetworkManager default
+rc-update add elogind boot
+
+rc-update del dhcpcd default
+
+glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+emerge -av dde-extra/deepin-editor dde-extra/deepin-compressor dde-extra/deepin-calculator
+
+
+;;
+
 *) echo "$1 is not an option" ;;
 esac
 shift
