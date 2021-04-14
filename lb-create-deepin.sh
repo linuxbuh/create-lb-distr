@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-deepin -f -v ON 
+cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20210413-x86_64.iso --id lb-deepin -f -v ON 
 
 cl-builder-update --id lb-deepin --scan ON -f
 

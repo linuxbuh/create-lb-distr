@@ -208,6 +208,7 @@ emaint sync -r deepin && eix-sync && eix-update
 cl-update -o
 
 emerge -av dde-meta
+dispatch-conf
 
 echo "app-accessibility/onboard
 dev-go/dbus-factory
@@ -224,6 +225,22 @@ media-gfx/blur-effect
 dev-go/go-x11-client
 dev-go/deepin-go-lib
 dev-go/go-gir-generator
+x11-libs/gsettings-qt
+gnome-base/libgnome-keyring
+dde-base/deepin-desktop-base
+dde-base/dde-meta
+dde-base/deepin-desktop-schemas
+dde-base/dde-qt5integration
+dde-base/dde-dock
+dde-base/deepin-menu
+dev-libs/dde-wayland
+dde-base/dde-qt-dbus-factory
+dde-base/dtkcore
+dde-base/dtkgui
+dev-libs/disomaster
+dde-base/udisks2-qt5
+dde-base/dtkwidget
+sys-apps/lshw
 x11-libs/bamf
 x11-wm/dde-kwin
 " >> /etc/portage/package.accept_keywords/deepin
