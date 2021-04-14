@@ -241,8 +241,8 @@ virtual/dde-wm kwin
 dde-base/dde-meta -terminal
 " >> /etc/portage/package.use/custom
 
-#правим файл dde-base/dpa-ext-gnomekeyring-5.0.4.ebuild и dde-base/startdde-5.8.4.ebuild
-#меняем строку   gnome-base/libgnome-keyring на gnome-base/gnome-keyring
+#gnome-base/libgnome-keyring-3.12.0-r3
+#меняем строку python3_ добавляем 8
 
 emerge dde-meta lightdm
 
