@@ -197,80 +197,49 @@ emerge @lb-apps-office
 
 -lb-deepin)
 
-eselect repository enable deepin
+eselect repository enable gnome-next
+eselect repository add deepin git https://github.com/zhtengw/deepin-overlay.git
+
 
 mkdir -p /etc/portage/package.accept_keywords
 mkdir -p /etc/portage/package.use
-echo "dde-*/*" >> /etc/portage/package.accept_keywords/deepin
-echo "dev-qt/*" >> /etc/portage/package.accept_keywords/deepin
+echo "dde-*/*" >> /etc/portage/package.accept_keywords/custom
+echo "dev-qt/*" >> /etc/portage/package.accept_keywords/custom
 
-emaint sync -r deepin && eix-sync && eix-update
+emaint sync -r deepin && emaint sync -r gnome-next && eix-sync && eix-update
 cl-update -o
 
 emerge -av dde-meta
 dispatch-conf
 
 #надо вичистить
-echo "app-accessibility/onboard
-dev-go/dbus-factory
-media-video/deepin-movie-reborn
+echo "x11-libs/gsettings-qt
 sys-apps/lshw
-x11-apps/xcur2png
-x11-wm/deepin-metacity
-dev-go/go-dbus-factory
 dev-go/go-dbus-generator
-virtual/dde-wm
-x11-libs/gsettings-qt
-dev-libs/disomaster
-media-gfx/blur-effect
-dev-go/go-x11-client
-dev-go/deepin-go-lib
+dev-go/dbus-factory
 dev-go/go-gir-generator
-x11-libs/gsettings-qt
+dev-go/go-x11-client
+dev-go/go-dbus-factory
+dev-go/deepin-go-lib
+x11-apps/xcur2png
+media-video/deepin-movie-reborn
+media-gfx/blur-effect
 gnome-base/libgnome-keyring
-dde-base/deepin-desktop-base
-dde-base/dde-meta
-dde-base/deepin-desktop-schemas
-dde-base/dde-qt5integration
-dde-base/dde-dock
-dde-base/deepin-menu
-dev-libs/dde-wayland
-dde-base/dde-qt-dbus-factory
-dde-base/dtkcore
-dde-base/dtkgui
-dev-libs/disomaster
-dde-base/udisks2-qt5
-dde-base/dtkwidget
-sys-apps/lshw
-x11-libs/bamf
-x11-wm/dde-kwin
-dev-go/dbus-factory
-media-video/deepin-movie-reborn
-dev-go/deepin-go-lib
-app-accessibility/onboard
-media-gfx/blur-effect
-x11-apps/xcur2png
-dev-go/go-dbus-generator
-dev-go/go-gir-generator
-dev-libs/dde-wayland
-dev-go/go-x11-client
-dev-go/go-dbus-factory
-dde-base/deepin-menu
-dde-base/dde-qt5integration
-dde-base/dde-dock
-dde-base/deepin-desktop-base
-dde-base/deepin-desktop-schemas
-gnome-base/gnome-keyring
 dev-cpp/htmlcxx
+dev-libs/dde-wayland
 x11-wm/dde-kwin
-virtual/dde-wm
+app-accessibility/onboard
 dev-libs/disomaster
-" >> /etc/portage/package.accept_keywords/deepin
+virtual/dde-wm
+dev-cpp/gtest
+
+" >> /etc/portage/package.accept_keywords/custom
 
 echo "x11-misc/lightdm qt5
 dev-libs/libxslt python
 virtual/dde-wm kwin
-" >> /etc/portage/package.use/deepin
+dde-base/dde-meta -terminal
+" >> /etc/portage/package.use/custom
 
 #правим файл dde-base/dpa-ext-gnomekeyring-5.0.4.ebuild и dde-base/startdde-5.8.4.ebuild
 #меняем строку   gnome-base/libgnome-keyring на gnome-base/gnome-keyring
