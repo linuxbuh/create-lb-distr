@@ -1,13 +1,13 @@
 #!/bin/sh
 
-cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-tde-base-livedeepin -f -v ON 
+cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-deepin -f -v ON 
 
-cl-builder-update --id lb-tde-base-livedeepin --scan ON -f
+cl-builder-update --id lb-deepin --scan ON -f
 
-chroot /run/calculate/mount/lb-tde-base-livedeepin
+chroot /run/calculate/mount/lb-deepin
 
 cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh
-bash /tmp/create-lb-distr.sh -lb-base-desktop -deepin 
+bash /tmp/create-lb-distr.sh -lb-base-desktop -lb-deepin 
 exit
 
-cl-builder-image --id lb-tde-base-livedeepin -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-tde-base-livedeepin-`date +%Y%m%d`-x86_64.iso -f
+cl-builder-image --id lb-deepin -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-deepin-`date +%Y%m%d`-x86_64.iso -f

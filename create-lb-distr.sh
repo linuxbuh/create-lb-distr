@@ -195,7 +195,7 @@ rc-update add multipath boot
 emerge @lb-apps-office
 ;;
 
--deepin)
+-lb-deepin)
 
 eselect repository enable deepin
 
