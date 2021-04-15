@@ -320,7 +320,7 @@ emerge -C chromium libreoffice x11-themes/claws-mail-theme-calculate media-gfx/c
 
 -lb-lxde)
 
-emerge -av lxde-base/lxde-meta media-gfx/lxdm-themes-calculate lxde-base/lxdm app-editors/leafpad media-gfx/gpicview x11-misc/obconf PCManFM
+emerge -av lxde-base/lxde-meta media-gfx/lxdm-themes-calculate lxde-base/lxdm app-editors/leafpad media-gfx/gpicview x11-misc/obconf x11-misc/pcmanfm
 
 ;;
 

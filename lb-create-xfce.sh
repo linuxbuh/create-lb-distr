@@ -3,7 +3,7 @@
 #cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-xfce -f -v ON 
 cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20210414-x86_64.iso --id lb-xfce -f -v ON 
 
-cl-builder-update --id lb-xfce --scan ON -f
+cl-builder-update --id lb-xfce --scan ON -f -o
 
 chroot /run/calculate/mount/lb-xfce
 

@@ -3,7 +3,7 @@
 #cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-base-desktop -f -v ON 
 cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20210413-x86_64.iso --id lb-base-desktop -f -v ON 
 
-cl-builder-update --id lb-base-desktop --scan ON -f
+cl-builder-update --id lb-base-desktop --scan ON -f -o
 
 chroot /run/calculate/mount/lb-base-desktop
 
