@@ -321,7 +321,7 @@ pantheon-base/pantheon-settings
 
 #Делаем на основе CLDX
 emerge -C chromium libreoffice x11-themes/claws-mail-theme-calculate media-gfx/calculate-wallpapers mail-client/claws-mail
-emerge x11-themes/kali-undercover
+emerge x11-themes/kali-undercover x11-themes/linuxbuh-backgrounds-micro
 
 ;;
 
