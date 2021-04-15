@@ -201,7 +201,7 @@ echo "
 app-crypt/gpgme python
 " >> /etc/portage/package.use/custom
 
-emerge @lb-apps-network
+emerge @lb-apps-network midori
 rc-update add anydesk default
 
 echo "
@@ -329,6 +329,9 @@ emerge -C chromium libreoffice x11-themes/claws-mail-theme-calculate media-gfx/c
 
 emerge -av lxde-base/lxde-meta media-gfx/lxdm-themes-calculate lxde-base/lxdm app-editors/leafpad media-gfx/gpicview x11-misc/obconf x11-misc/pcmanfm
 
+#Копируем шаблон /etc/conf.d/xdm.clt в /etc/conf.d/xdm
+cp -r /etc/conf.d/xdm.clt /etc/conf.d/xdm
+rc-update add xdm default
 ;;
 
 *) echo "$1 is not an option" ;;
