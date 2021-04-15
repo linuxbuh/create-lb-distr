@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# ПРИ СБОРКЕ НОВОГО ДИСТРА С CLS НУЖНО УКАЗАТЬ ДВА ФЛАГА -lb-add-linuxbuh и -lb-base-desktop
+
 #Убираем лишние языки
 #echo 'LINGUAS="en ru"' >> /etc/portage/make.conf/custom
 #или
@@ -13,26 +15,22 @@ while [ -n "$1" ]
 do
 case "$1" in
 
--lb-add-desktop)
-
-eselect repository add linuxbuh git https://github.com/linuxbuh/linuxbuh.git
-emaint sync -r linuxbuh && eix-sync && eix-update
-cp -r /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
-
-;;
-
--lb-base-desktop)
+-lb-add-linuxbuh)
 #Подключаем репозиторий linuxbuh
-
 eselect repository add linuxbuh git https://github.com/linuxbuh/linuxbuh.git
 emaint sync -r linuxbuh && eix-sync && eix-update
-
-#Внести правки из репы https://github.com/linuxbuh/linuxbuh.git
 mkdir -p /etc/portage/package.accept_keywords
 mkdir -p /etc/portage/package.use
 touch /etc/portage/package.accept_keywords/custom
 touch /etc/portage/package.use/custom
 cp -r /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
+
+;;
+
+-lb-base-desktop)
+
+#Внести правки из репы https://github.com/linuxbuh/linuxbuh.git для desktop
+
 cat /var/db/repos/linuxbuh/profiles/package.accept_keywords.lb-base-desktop | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh/profiles/package.use.lb-base-desktop | tee -a /etc/portage/package.use/custom
 

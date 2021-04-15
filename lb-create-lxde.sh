@@ -17,7 +17,8 @@ chroot /run/calculate/mount/lb-lxde
 #cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh
 #bash /tmp/create-lb-distr.sh -lb-lxde
 
-chroot /run/calculate/mount/lb-xfce /bin/bash cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-add-desktop -lb-xfce -lb-apps-office -lb-apps-network -lb-apps-1c
+chroot /run/calculate/mount/lb-lxde
+cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-lxde -lb-apps-office -lb-apps-network -lb-apps-1c
 
 
 exit

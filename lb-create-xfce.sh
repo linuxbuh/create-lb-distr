@@ -10,7 +10,8 @@ exit
 
 cl-builder-update --id lb-xfce --scan ON -f -o
 
-chroot /run/calculate/mount/lb-xfce /bin/bash cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-add-desktop -lb-xfce -lb-apps-office -lb-apps-network -lb-apps-1c
+chroot /run/calculate/mount/lb-xfce
+cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-add-linuxbuh -lb-xfce -lb-apps-office -lb-apps-network -lb-apps-1c
 
 exit
 
