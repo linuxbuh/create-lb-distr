@@ -14,8 +14,12 @@ cl-builder-update --id lb-lxde --scan ON -f -o
 
 chroot /run/calculate/mount/lb-lxde
 
-cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh
-bash /tmp/create-lb-distr.sh -lb-lxde
+#cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh
+#bash /tmp/create-lb-distr.sh -lb-lxde
+
+chroot /run/calculate/mount/lb-xfce /bin/bash cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-add-desktop -lb-xfce -lb-apps-office -lb-apps-network -lb-apps-1c
+
+
 exit
 
 cl-builder-image --id lb-lxde -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-lxde-`date +%Y%m%d`-x86_64.iso -f

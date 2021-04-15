@@ -12,6 +12,15 @@ echo
 while [ -n "$1" ]
 do
 case "$1" in
+
+-lb-add-desktop)
+
+eselect repository add linuxbuh git https://github.com/linuxbuh/linuxbuh.git
+emaint sync -r linuxbuh && eix-sync && eix-update
+cp -r /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
+
+;;
+
 -lb-base-desktop)
 #Подключаем репозиторий linuxbuh
 
