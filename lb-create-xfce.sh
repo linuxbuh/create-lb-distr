@@ -11,4 +11,4 @@ cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/
 bash /tmp/create-lb-distr.sh -lb-xfce
 exit
 
-cl-builder-image --id lb-base-desktop -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-xfce-`date +%Y%m%d`-x86_64.iso -f
+cl-builder-image --id lb-xfce -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-xfce-`date +%Y%m%d`-x86_64.iso -f

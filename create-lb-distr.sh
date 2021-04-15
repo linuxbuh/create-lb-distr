@@ -186,6 +186,8 @@ app-crypt/cryptoprocsp
 www-plugins/cades
 net-misc/anydesk
 www-client/torbrowser-launcher
+net-misc/yandex-disk
+www-client/yandex-browser-beta
 " >> /etc/portage/package.accept_keywords/custom
 
 echo "
@@ -202,7 +204,16 @@ rc_hotplug="pcscd"
 ;;
 
 -lb-apps-1c)
-emerge @lb-apps-1c
+
+echo "
+sys-apps/hasp
+" >> /etc/portage/package.accept_keywords/custom
+
+echo "
+sys-apps/hasp usb demo net_hasp wine
+" >> /etc/portage/package.use/custom
+
+emerge @lb-apps-1c =net-libs/webkit-gtk-linuxbuh-bin-2.4.11-r1
 rc-update add aksusbd default
 rc-update add hasplm default
 rc-update add hasplmd default
@@ -214,6 +225,7 @@ rc-update add multipath boot
 echo "
 app-office/onlyoffice-bin
 media-gfx/vuescan
+app-office/joplin-desktop-bin
 " >> /etc/portage/package.accept_keywords/custom
 
 emerge @lb-apps-office
