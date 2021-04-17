@@ -4,7 +4,8 @@
 cl-builder-prepare --source /var/calculate/linux/cldx-20210412-x86_64.iso --id lb-xfce -f -v ON 
 
 chroot /run/calculate/mount/lb-xfce
-shopt -s extglob && rm -r /var/db/repos/!(calculate|distros)
+shopt -s extglob
+rm -R /var/db/repos/!(calculate|distros)
 emerge --sync linuxbuh
 exit
 
