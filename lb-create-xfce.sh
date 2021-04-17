@@ -3,13 +3,13 @@
 #cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-xfce -f -v ON 
 cl-builder-prepare --source /var/calculate/linux/cldx-20210412-x86_64.iso --id lb-xfce -f -v ON 
 
-chroot /run/calculate/mount/lb-xfce
+chroot /run/calculate/mount/lb-xfce 
 shopt -s extglob
-rm -R /var/db/repos/!(calculate|distros)
+rm -r /var/db/repos/!(@(calculate|distros))
 emerge --sync linuxbuh
 exit
 
-#cl-builder-update --id lb-xfce --scan ON -f -o
+#cl-builder-update --id lb-xfce --scan ON -f -o -C --rebuild-world
 
 chroot /run/calculate/mount/lb-xfce
 
