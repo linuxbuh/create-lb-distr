@@ -220,7 +220,7 @@ echo "
 sys-apps/hasp usb demo net_hasp wine
 " >> /etc/portage/package.use/custom
 
-emerge @lb-apps-1c =net-libs/webkit-gtk-linuxbuh-bin-2.4.11-r1
+emerge @lb-apps-1c =net-libs/webkit-gtk-linuxbuh-bin-2.4.11-r1 hasp
 rc-update add aksusbd default
 rc-update add hasplm default
 rc-update add hasplmd default
