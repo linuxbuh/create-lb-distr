@@ -9,7 +9,7 @@ rm -r /var/db/repos/!(@(calculate|distros))
 emerge --sync linuxbuh
 exit
 
-#cl-builder-update --id lb-xfce --scan ON -f -o -C
+#cl-builder-update --id lb-xfce --scan ON -f -o -C ON
 
 chroot /run/calculate/mount/lb-xfce
 
