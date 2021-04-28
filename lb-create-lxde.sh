@@ -6,16 +6,11 @@ cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20210414-x86_64
 cl-builder-update --id lb-lxde --scan ON -f -o -C ON
 
 chroot /run/calculate/mount/lb-lxde
-rm -R /var/db/repos/linuxbuh/*
-emerge --sync linuxbuh
+shopt -s extglob
+rm -r /var/db/repos/!(@(calculate|distros))
 exit
 
 cl-builder-update --id lb-lxde --scan ON -f -o -C ON
-
-chroot /run/calculate/mount/lb-lxde
-
-#cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh
-#bash /tmp/create-lb-distr.sh -lb-lxde
 
 chroot /run/calculate/mount/lb-lxde
 cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-lxde -lb-apps-office -lb-apps-network -lb-apps-1c
