@@ -43,7 +43,7 @@ rc-update add NetworkManager default
 rc-update add acpid default
 rc-update add bluetooth default
 rc-update add sshd default
-rc-update add xdm boot
+rc-update add display-manager boot
 rc-update add calculate-core boot
 
 ;;
@@ -70,13 +70,13 @@ cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-live /
 #для tde-base
 emerge @lb-tde-base-live
 
-#Создаем шаблон /etc/conf.d/xdm.clt чтобы не затерлось при обновлении #кальки
-cp -r /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
+#Создаем шаблон /etc/conf.d/display-manager.clt чтобы не затерлось при обновлении #кальки
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/display-manager.clt /etc/conf.d/display-manager.clt
 
-#Копируем шаблон /etc/conf.d/xdm.clt в /etc/conf.d/xdm
-cp -r /etc/conf.d/xdm.clt /etc/conf.d/xdm
+#Копируем шаблон /etc/conf.d/display-manager.clt в /etc/conf.d/display-manager
+cp -r /etc/conf.d/display-manager.clt /etc/conf.d/display-manager
 
-#Добавить в файл /etc/init.d/xdm после строк 
+#Добавить в файл /etc/init.d/display-manager после строк 
 #kdm|kde)
 #			EXE=/usr/bin/kdm
 #			PIDFILE=/run/kdm.pid
@@ -88,7 +88,7 @@ cp -r /etc/conf.d/xdm.clt /etc/conf.d/xdm
 #			PIDFILE=/run/tdm.pid
 #			;;
 #или патчим
-patch /etc/init.d/xdm < /var/db/repos/linuxbuh-tde/profiles/etc/init.d/xdm.patch
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/init.d/display-manager /etc/init.d/display-manager 
 
 #Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 cp -r /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
@@ -139,13 +139,13 @@ cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-14.0.8 /e
 #для tde-base
 emerge @lb-tde-base
 
-#Создаем шаблон /etc/conf.d/xdm.clt чтобы не затерлось при обновлении #кальки
-cp -r /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/xdm.clt /etc/conf.d/xdm.clt
+#Создаем шаблон /etc/conf.d/display-manager.clt чтобы не затерлось при обновлении #кальки
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/display-manager.clt /etc/conf.d/display-manager.clt
 
-#Копируем шаблон /etc/conf.d/xdm.clt в /etc/conf.d/xdm
-cp -r /etc/conf.d/xdm.clt /etc/conf.d/xdm
+#Копируем шаблон /etc/conf.d/display-manager.clt в /etc/conf.d/display-manager
+cp -r /etc/conf.d/display-manager.clt /etc/conf.d/display-manager
 
-#Добавить в файл /etc/init.d/xdm после строк 
+#Добавить в файл /etc/init.d/display-manager после строк 
 #kdm|kde)
 #			EXE=/usr/bin/kdm
 #			PIDFILE=/run/kdm.pid
@@ -157,7 +157,7 @@ cp -r /etc/conf.d/xdm.clt /etc/conf.d/xdm
 #			PIDFILE=/run/tdm.pid
 #			;;
 #или патчим
-patch /etc/init.d/xdm < /var/db/repos/linuxbuh-tde/profiles/etc/init.d/xdm.patch
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/init.d/display-manager /etc/init.d/display-manager
 
 #Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 cp -r /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
@@ -298,7 +298,7 @@ dde-base/dde-meta -terminal
 emerge dde-meta lightdm
 
 rc-update add dbus default
-rc-update add xdm default
+rc-update add display-manager default
 rc-update add NetworkManager default
 rc-update add elogind boot
 
@@ -329,9 +329,9 @@ emerge x11-themes/kali-undercover x11-themes/linuxbuh-backgrounds-micro mousepad
 
 emerge -av lxde-base/lxde-meta media-gfx/lxdm-themes-calculate lxde-base/lxdm app-editors/leafpad media-gfx/gpicview x11-misc/obconf x11-misc/pcmanfm
 
-#Копируем шаблон /etc/conf.d/xdm.clt в /etc/conf.d/xdm
-cp -r /etc/conf.d/xdm.clt /etc/conf.d/xdm
-rc-update add xdm default
+#Копируем шаблон /etc/conf.d/display-manager.clt в /etc/conf.d/display-manager
+cp -r /etc/conf.d/display-manager.clt /etc/conf.d/display-manager
+rc-update add display-manager boot
 ;;
 
 *) echo "$1 is not an option" ;;
