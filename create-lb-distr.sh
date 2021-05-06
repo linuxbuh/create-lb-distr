@@ -121,7 +121,7 @@ emerge --oneshot =tde-i18n-9999
 #для lb-tde-base
 -lb-tde-base)
 #Подключаем репозиторий tde
-eselect repository add trinity-official git https://mirror.git.trinitydesktop.org/gitea/TDE/tde-packaging-gentoo.git
+eselect repository add trinity-official git https://github.com/linuxbuh/trinity-official.git
 #Внести правки из репы https://github.com/linuxbuh/linuxbuh-tde.git
 eselect repository add linuxbuh-tde git https://github.com/linuxbuh/linuxbuh-tde.git
 #Синкаем репозиторий tde
@@ -130,11 +130,11 @@ emaint sync -r trinity-official && emaint sync -r linuxbuh-tde && eix-sync && ei
 #Копируем файл
 mkdir -p /etc/portage/package.accept_keywords
 mkdir -p /etc/portage/package.use
-cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom-14.0.8 | tee -a /etc/portage/package.accept_keywords/custom
-cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom-14.0.8 | tee -a /etc/portage/package.use/custom
+cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom | tee -a /etc/portage/package.accept_keywords/custom
+cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
 cp -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
-cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base-14.0.8 /etc/portage/sets/lb-tde-base
-cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-14.0.8 /etc/portage/sets/lb-tde-meta
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base /etc/portage/sets/lb-tde-base
+cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta /etc/portage/sets/lb-tde-meta
 
 #для tde-base
 emerge @lb-tde-base
