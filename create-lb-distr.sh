@@ -240,6 +240,10 @@ emerge @lb-apps-office
 
 -lb-apps-rucrypto)
 
+echo "
+www-plugins/IFCPlugin
+" >> /etc/portage/package.accept_keywords/custom
+
 emerge @lb-apps-rucrypto
 ;;
 
