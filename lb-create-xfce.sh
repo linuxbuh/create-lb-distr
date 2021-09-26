@@ -15,7 +15,7 @@ chroot /run/calculate/mount/lb-xfce
 
 cl-update --scan ON -f -o
 
-cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-add-linuxbuh -lb-xfce -lb-apps-office -lb-apps-network -lb-apps-1c
+cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-add-linuxbuh -lb-xfce -lb-apps-office -lb-apps-network -lb-apps-1c -lb-apps-rucrypto
 
 exit
 

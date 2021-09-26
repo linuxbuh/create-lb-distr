@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-lxde -f -v ON 
-cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20210414-x86_64.iso --id lb-lxde -f -v ON 
+cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20210925-x86_64.iso --id lb-lxde -f -v ON 
 
 cl-builder-update --id lb-lxde --scan ON -f -o -C ON
 
@@ -13,7 +13,7 @@ exit
 cl-builder-update --id lb-lxde --scan ON -f -o -C ON
 
 chroot /run/calculate/mount/lb-lxde
-cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-lxde -lb-apps-office -lb-apps-network -lb-apps-1c
+cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-lxde -lb-apps-office -lb-apps-network -lb-apps-1c -lb-apps-rucrypto
 
 
 exit

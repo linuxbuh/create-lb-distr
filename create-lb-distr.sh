@@ -238,6 +238,11 @@ app-office/joplin-desktop-bin
 emerge @lb-apps-office
 ;;
 
+-lb-apps-rucrypto)
+
+emerge @lb-apps-rucrypto
+;;
+
 -lb-deepin)
 
 eselect repository enable gnome-next

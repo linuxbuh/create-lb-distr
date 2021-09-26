@@ -15,7 +15,7 @@ emerge -C app-office/libreoffice mail-client/claws-mail media-gfx/calculate-wall
 emerge net-libs/webkit-gtk-linuxbuh-bin:3 net-libs/webkit-gtk-linuxbuh-bin:2 app-office/linuxbuh-1c-installer sys-apps/linuxbuh-installer sys-apps/linuxbuh-persistence-mode www-client/midori x11-themes/kali-undercover x11-themes/linuxbuh-backgrounds-micro
 
 
-cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-add-linuxbuh -lb-windows10 -lb-apps-office -lb-apps-network -lb-apps-1c
+cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh && bash /tmp/create-lb-distr.sh -lb-add-linuxbuh -lb-windows10 -lb-apps-office -lb-apps-network -lb-apps-1c -lb-apps-rucrypto
 
 exit
 
