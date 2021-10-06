@@ -211,6 +211,7 @@ app-crypt/gpgme python
 
 emerge @lb-apps-network midori
 rc-update add anydesk default
+eselect fontconfig enable 60-liberation.conf
 
 echo "
 rc_hotplug="pcscd"
