@@ -23,7 +23,8 @@ mkdir -p /etc/portage/package.accept_keywords
 mkdir -p /etc/portage/package.use
 touch /etc/portage/package.accept_keywords/custom
 touch /etc/portage/package.use/custom
-cp -r /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
+ln -f /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
+#cp -r /var/db/repos/linuxbuh/profiles/sets/* /etc/portage/sets/
 
 ;;
 
@@ -48,6 +49,14 @@ rc-update add calculate-core boot
 
 ;;
 
+-lb-w10)
+
+emerge -C app-office/libreoffice mail-client/claws-mail media-gfx/calculate-wallpapers x11-themes/claws-mail-theme-calculate www-client/chromium
+
+emerge x11-themes/kali-undercover
+
+;;
+
 #для lb-tde-base-live
 -lb-tde-base-live)
 #Подключаем репозиторий tde
@@ -64,11 +73,11 @@ cat /var/db/repos/trinity-official/Documentation/trinity.live.keywords | tee -a 
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom-live | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom-live | tee -a /etc/portage/package.use/custom
 cp -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
-cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base-live /etc/portage/sets/lb-tde-base-live
-cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-live /etc/portage/sets/lb-tde-meta-live
+#cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base-live /etc/portage/sets/lb-tde-base-live
+#cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-live /etc/portage/sets/lb-tde-meta-live
 
 #для tde-base
-emerge @lb-tde-base-live
+#emerge @lb-tde-base-live
 
 #Создаем шаблон /etc/conf.d/display-manager.clt чтобы не затерлось при обновлении #кальки
 cp -r /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/display-manager.clt /etc/conf.d/display-manager.clt
