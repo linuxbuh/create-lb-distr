@@ -198,12 +198,11 @@ emaint sync -r torbrowser && eix-sync && eix-update
 
 echo "
 net-im/rambox-bin
-app-crypt/cryptoprocsp
-www-plugins/cades
 net-misc/anydesk
 www-client/torbrowser-launcher
 net-misc/yandex-disk
 www-client/yandex-browser-beta
+www-client/microsoft-edge-beta
 " >> /etc/portage/package.accept_keywords/custom
 
 echo "

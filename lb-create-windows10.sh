@@ -11,7 +11,7 @@ exit
 cl-builder-update --id lb-w10 --scan ON -f -o -C ON
 
 chroot /run/calculate/mount/lb-w10
-emerge -C app-office/libreoffice mail-client/claws-mail media-gfx/calculate-wallpapers x11-themes/claws-mail-theme-calculate www-client/chromium
+#emerge -C app-office/libreoffice mail-client/claws-mail media-gfx/calculate-wallpapers x11-themes/claws-mail-theme-calculate www-client/chromium
 #emerge net-libs/webkit-gtk-linuxbuh-bin:3 net-libs/webkit-gtk-linuxbuh-bin:2 app-office/linuxbuh-1c-installer sys-apps/linuxbuh-installer sys-apps/linuxbuh-persistence-mode www-client/midori x11-themes/kali-undercover x11-themes/linuxbuh-backgrounds-micro
 
 cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh
