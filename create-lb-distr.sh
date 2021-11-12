@@ -352,6 +352,15 @@ cp -r /etc/conf.d/display-manager /etc/conf.d/display-manager.clt
 rc-update add display-manager boot
 ;;
 
+-lb-icewm)
+
+emerge -av app-editors/leafpad media-gfx/gpicview x11-misc/obconf x11-misc/pcmanfm gnome-extra/nm-applet x11-themes/iceicons gnustep-apps/terminal app-misc/mc
+
+#Копируем шаблон /etc/conf.d/display-manager.clt в /etc/conf.d/display-manager
+cp -r /etc/conf.d/display-manager /etc/conf.d/display-manager.clt
+rc-update add display-manager boot
+;;
+
 *) echo "$1 is not an option" ;;
 esac
 shift
