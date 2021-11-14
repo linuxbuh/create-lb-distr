@@ -3,8 +3,6 @@
 #cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-icewm -f -v ON 
 cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20210925-x86_64.iso --id lb-icewm -f -v ON 
 
-#cl-builder-update --id lb-icewm --scan ON -f -o -C ON
-
 chroot /run/calculate/mount/lb-icewm /bin/bash -x <<'EOF'
 shopt -s extglob
 rm -r /var/db/repos/!(@(calculate|distros))
