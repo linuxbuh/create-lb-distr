@@ -99,6 +99,13 @@ cp -r /etc/conf.d/display-manager.clt /etc/conf.d/display-manager
 #или патчим
 cp -r /var/db/repos/linuxbuh-tde/profiles/etc/init.d/display-manager /etc/init.d/display-manager 
 
+rc-update add NetworkManager default
+rc-update add acpid default
+rc-update add bluetooth default
+rc-update add sshd default
+rc-update add display-manager boot
+rc-update add calculate-core boot
+
 #Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 cp -r /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 
