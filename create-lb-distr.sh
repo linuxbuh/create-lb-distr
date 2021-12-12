@@ -137,7 +137,8 @@ emerge --oneshot =tde-i18n-9999
 #для lb-tde-base
 -lb-tde-base)
 #Подключаем репозиторий tde
-eselect repository add trinity-official git https://github.com/linuxbuh/trinity-official.git
+#eselect repository add trinity-official git https://github.com/linuxbuh/trinity-official.git
+eselect repository add trinity-official git https://mirror.git.trinitydesktop.org/gitea/TDE/tde-packaging-gentoo.git
 #Внести правки из репы https://github.com/linuxbuh/linuxbuh-tde.git
 eselect repository add linuxbuh-tde git https://github.com/linuxbuh/linuxbuh-tde.git
 #Синкаем репозиторий tde
@@ -150,7 +151,7 @@ cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/cust
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom | tee -a /etc/portage/package.use/custom
 cp -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
 cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base /etc/portage/sets/lb-tde-base
-cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta /etc/portage/sets/lb-tde-meta
+#cp -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta /etc/portage/sets/lb-tde-meta
 
 #для tde-base
 emerge @lb-tde-base
@@ -175,9 +176,15 @@ cp -r /etc/conf.d/display-manager.clt /etc/conf.d/display-manager
 #или патчим
 cp -r /var/db/repos/linuxbuh-tde/profiles/etc/init.d/display-manager /etc/init.d/display-manager
 
+rc-update add NetworkManager default
+rc-update add acpid default
+rc-update add bluetooth default
+rc-update add sshd default
+rc-update add display-manager boot
+rc-update add calculate-core boot
+
 #Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 cp -r /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
-
 ;;
 
 #для tde-meta
