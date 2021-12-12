@@ -77,7 +77,7 @@ cp -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /
 #cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-live /etc/portage/sets/lb-tde-meta-live
 
 #для tde-base
-#emerge @lb-tde-base-live
+emerge @lb-tde-base-live
 
 #Создаем шаблон /etc/conf.d/display-manager.clt чтобы не затерлось при обновлении #кальки
 cp -r /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/display-manager.clt /etc/conf.d/display-manager.clt
