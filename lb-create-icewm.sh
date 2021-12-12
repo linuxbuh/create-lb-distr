@@ -1,7 +1,13 @@
 #!/bin/sh
 
-#cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-icewm -f -v ON 
-cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20210925-x86_64.iso --id lb-icewm -f -v ON 
+if [ -n "$1" ]
+then
+
+DATE=$1
+
+cl-builder-break --id lb-icewm -f
+
+cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-$DATE-x86_64.iso --id lb-icewm -f -v ON
 
 chroot /run/calculate/mount/lb-icewm /bin/bash -x <<'EOF'
 shopt -s extglob
@@ -17,3 +23,7 @@ exit
 EOF
 
 cl-builder-image --id lb-icewm -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-icewm-`date +%Y%m%d`-x86_64.iso -f
+
+else
+echo "Не введена дата исходного дистрибутива lb-base-desktop. Например 20211212"
+fi

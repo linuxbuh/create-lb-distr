@@ -1,7 +1,13 @@
 #!/bin/sh
 
-#cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20210505-x86_64.iso --id lb-tde-base -f -v ON 
-cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-20211128-x86_64.iso --id lb-tde-base -f -v ON 
+if [ -n "$1" ]
+then
+
+DATE=$1
+
+cl-builder-break --id lb-tde-base -f
+
+cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-$DATE-x86_64.iso --id lb-tde-base -f -v ON 
 
 chroot /run/calculate/mount/lb-tde-base /bin/bash -x <<'EOF'
 shopt -s extglob
@@ -21,3 +27,7 @@ EOF
 
 
 cl-builder-image --id lb-tde-base -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-tde-base-`date +%Y%m%d`-x86_64.iso -f
+
+else
+echo "Не введена дата исходного дистрибутива lb-base-desktop. Например 20211212"
+fi

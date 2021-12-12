@@ -1,7 +1,13 @@
 #!/bin/sh
 
-#cl-builder-prepare --source /home/guest/iso/cls-20210405-x86_64.iso --id lb-base-desktop -f -v ON 
-cl-builder-prepare --source /var/calculate/linux/cls-20210413-x86_64.iso --id lb-base-desktop -f -v ON 
+if [ -n "$1" ]
+then
+
+DATE=$1
+
+cl-builder-break --id lb-base-desktop -f
+
+cl-builder-prepare --source /var/calculate/linux/cls-$DATE-x86_64.iso --id lb-base-desktop -f -v ON
 
 cl-builder-update --id lb-base-desktop --scan ON -f -o -C ON
 
@@ -14,3 +20,7 @@ EOF
 cl-builder-update --id lb-base-desktop --scan ON -f -o -C ON
 
 cl-builder-image --id lb-base-desktop -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-base-desktop-`date +%Y%m%d`-x86_64.iso -f
+
+else
+echo "Не введена дата исходного дистрибутива CLS. Например 20211212"
+fi

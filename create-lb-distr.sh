@@ -109,6 +109,7 @@ rc-update add calculate-core boot
 #Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 cp -r /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 
+rm -fR /var/calculate/distfiles/git3-src
 ;;
 
 #для tde-meta
@@ -185,6 +186,8 @@ rc-update add calculate-core boot
 
 #Правим файл /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
 cp -r /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser /usr/trinity/14/share/apps/kdesktop/Desktop/Web_Browser
+
+rm -fR /var/calculate/distfiles/git3-src
 ;;
 
 #для tde-meta
