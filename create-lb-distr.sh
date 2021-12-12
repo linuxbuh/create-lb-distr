@@ -77,7 +77,7 @@ cp -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /
 #cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-live /etc/portage/sets/lb-tde-meta-live
 
 #для tde-base
-emerge @lb-tde-base-live
+emerge @lb-tde-base
 
 #Создаем шаблон /etc/conf.d/display-manager.clt чтобы не затерлось при обновлении #кальки
 cp -r /var/db/repos/linuxbuh-tde/profiles/etc/conf.d/display-manager.clt /etc/conf.d/display-manager.clt
@@ -107,7 +107,7 @@ cp -r /var/db/repos/linuxbuh-tde/profiles/usr/trinity/14/share/apps/kdesktop/Des
 #для tde-meta
 -lb-tde-meta-live)
 
-emerge @lb-tde-meta-live
+emerge @lb-tde-meta
 
 #Необходимо разобраться с trinity-base/tdemultimedia-meta-9999, не #собираются пакеты trinity-base/tdemultimedia-tdeioslaves-9999 и #trinity-base/tdemultimedia-arts-9999
 
