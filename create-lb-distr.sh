@@ -73,7 +73,7 @@ cat /var/db/repos/trinity-official/Documentation/trinity.live.keywords | tee -a 
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.accept_keywords/custom-live | tee -a /etc/portage/package.accept_keywords/custom
 cat /var/db/repos/linuxbuh-tde/profiles/etc/portage/package.use/custom-live | tee -a /etc/portage/package.use/custom
 cp -r /var/db/repos/linuxbuh-tde/trinity-base/tdebase-pam/tdebase-pam-7.ebuild /var/db/repos/trinity-official/trinity-base/tdebase-pam/tdebase-pam-7.ebuild
-#cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base-live /etc/portage/sets/lb-tde-base-live
+cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-base /etc/portage/sets/lb-tde-base
 #cp -f -r /var/db/repos/linuxbuh-tde/profiles/etc/portage/sets/lb-tde-meta-live /etc/portage/sets/lb-tde-meta-live
 
 #для tde-base
