@@ -9,8 +9,6 @@ cl-builder-break --id lb-lxde -f
 
 cl-builder-prepare --source /var/calculate/linux/lb-base-desktop-$DATE-x86_64.iso --id lb-lxde -f -v ON
 
-cl-builder-update --id lb-lxde --scan ON -f -o -C ON
-
 chroot /run/calculate/mount/lb-lxde /bin/bash -x <<'EOF'
 shopt -s extglob
 rm -r /var/db/repos/!(@(calculate|distros))
