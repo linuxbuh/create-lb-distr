@@ -226,7 +226,7 @@ echo "
 app-crypt/gpgme python
 " >> /etc/portage/package.use/custom
 
-emerge @lb-apps-network midori
+emerge @lb-apps-network
 rc-update add anydesk default
 eselect fontconfig enable 60-liberation.conf
 
