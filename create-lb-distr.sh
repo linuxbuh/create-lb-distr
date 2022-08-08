@@ -270,6 +270,12 @@ echo "
 www-plugins/IFCPlugin
 " >> /etc/portage/package.accept_keywords/custom
 
+echo "CONFIG_PROTECT_MASK = /etc/portage" >> /etc/portage/make.conf/custom
+
+echo "app-crypt/cryptoprocsp" >> /etc/portage/package.accept_keywords/custom
+echo "www-plugins/cades" >> /etc/portage/package.accept_keywords/custom
+
+
 emerge @lb-apps-rucrypto
 ;;
 
