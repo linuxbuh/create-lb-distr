@@ -30,7 +30,7 @@ bash /tmp/create-lb-distr.sh -lb-add-linuxbuh -lb-w10 -lb-apps-office -lb-apps-n
 exit
 EOF
 
-cl-builder-image --id lb-w10 -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-w10-`date +%Y%m%d`-x86_64.iso -f
+#cl-builder-image --id lb-w10 -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-w10-`date +%Y%m%d`-x86_64.iso -f
 
 else
 echo "Не введена дата исходного дистрибутива CLDX. Например 20211212"

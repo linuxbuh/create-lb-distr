@@ -19,7 +19,7 @@ EOF
 
 cl-builder-update --id lb-base-desktop --scan ON -f -o -C ON
 
-cl-builder-image --id lb-base-desktop -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-base-desktop-`date +%Y%m%d`-x86_64.iso -f
+#cl-builder-image --id lb-base-desktop -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-base-desktop-`date +%Y%m%d`-x86_64.iso -f
 
 else
 echo "Не введена дата исходного дистрибутива CLS. Например 20211212"

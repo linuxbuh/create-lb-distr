@@ -22,7 +22,7 @@ cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/
 exit
 EOF
 
-cl-builder-image --id lb-icewm -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-icewm-`date +%Y%m%d`-x86_64.iso -f
+#cl-builder-image --id lb-icewm -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-icewm-`date +%Y%m%d`-x86_64.iso -f
 
 else
 echo "Не введена дата исходного дистрибутива lb-base-desktop. Например 20211212"

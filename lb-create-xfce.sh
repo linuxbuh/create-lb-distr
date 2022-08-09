@@ -23,7 +23,7 @@ cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/
 exit
 EOF
 
-cl-builder-image --id lb-xfce -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-xfce-`date +%Y%m%d`-x86_64.iso -f
+#cl-builder-image --id lb-xfce -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-xfce-`date +%Y%m%d`-x86_64.iso -f
 
 else
 echo "Не введена дата исходного дистрибутива CLDX. Например 20211212"

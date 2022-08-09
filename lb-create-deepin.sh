@@ -24,7 +24,7 @@ bash /tmp/create-lb-distr.sh -lb-base-desktop -lb-deepin
 exit
 EOF
 
-cl-builder-image --id lb-deepin -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-deepin-`date +%Y%m%d`-x86_64.iso -f
+#cl-builder-image --id lb-deepin -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-deepin-`date +%Y%m%d`-x86_64.iso -f
 
 else
 echo "Не введена дата исходного дистрибутива lb-base-desktop. Например 20211212"

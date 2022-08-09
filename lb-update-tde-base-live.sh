@@ -9,4 +9,4 @@ EOF
 
 cl-builder-update --id lb-tde-base-live --scan ON -f -o -C ON
 
-cl-builder-image --id lb-tde-base-live -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-tde-base-live-`date +%Y%m%d`-x86_64.iso -f
+#cl-builder-image --id lb-tde-base-live -V ON --keep-tree OFF  -v ON --image /var/calculate/linux/lb-tde-base-live-`date +%Y%m%d`-x86_64.iso -f

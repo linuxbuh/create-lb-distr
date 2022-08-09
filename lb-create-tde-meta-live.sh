@@ -23,7 +23,7 @@ bash /tmp/create-lb-distr.sh -lb-meta-desktop -lb-tde-base-live -lb-tde-meta-liv
 exit
 EOF
 
-cl-builder-image --id lb-tde-meta-live -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-tde-meta-live-`date +%Y%m%d`-x86_64.iso -f
+#cl-builder-image --id lb-tde-meta-live -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-tde-meta-live-`date +%Y%m%d`-x86_64.iso -f
 
 else
 echo "Не введена дата исходного дистрибутива lb-tde-base-live. Например 20211212"

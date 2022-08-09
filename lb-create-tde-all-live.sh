@@ -25,7 +25,7 @@ bash /tmp/create-lb-distr.sh -lb-tde-all-live
 exit
 EOF
 
-cl-builder-image --id lb-tde-all-live -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-tde-all-live-`date +%Y%m%d`-x86_64.iso -f
+#cl-builder-image --id lb-tde-all-live -V ON --keep-tree OFF -v ON --image /var/calculate/linux/lb-tde-all-live-`date +%Y%m%d`-x86_64.iso -f
 
 else
 echo "Не введена дата исходного дистрибутива lb-tde-meta-live. Например 20211212"
