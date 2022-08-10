@@ -372,8 +372,12 @@ emerge x11-themes/kali-undercover x11-themes/linuxbuh-backgrounds-micro mousepad
 
 emerge lxde-base/lxde-meta media-gfx/lxdm-themes-calculate lxde-base/lxdm app-editors/leafpad media-gfx/gpicview x11-misc/obconf x11-misc/pcmanfm
 
+#Создаем шаблон /etc/conf.d/display-manager.clt чтобы не затерлось при обновлении #кальки
+cp -r /var/db/repos/linuxbuh/profiles/etc/conf.d/display-manager.clt /etc/conf.d/display-manager.clt
+
 #Копируем шаблон /etc/conf.d/display-manager.clt в /etc/conf.d/display-manager
-cp -r /etc/conf.d/display-manager /etc/conf.d/display-manager.clt
+cp -r /etc/conf.d/display-manager.clt /etc/conf.d/display-manager
+
 rc-update add display-manager boot
 ;;
 
@@ -381,8 +385,12 @@ rc-update add display-manager boot
 
 emerge app-editors/leafpad media-gfx/gpicview x11-misc/obconf x11-misc/pcmanfm gnome-extra/nm-applet x11-themes/iceicons gnustep-apps/terminal app-misc/mc media-gfx/lightdm-themes-calculate
 
+#Создаем шаблон /etc/conf.d/display-manager.clt чтобы не затерлось при обновлении #кальки
+cp -r /var/db/repos/linuxbuh/profiles/etc/conf.d/display-manager.clt /etc/conf.d/display-manager.clt
+
 #Копируем шаблон /etc/conf.d/display-manager.clt в /etc/conf.d/display-manager
-cp -r /etc/conf.d/display-manager /etc/conf.d/display-manager.clt
+cp -r /etc/conf.d/display-manager.clt /etc/conf.d/display-manager
+
 rc-update add display-manager boot
 ;;
 
