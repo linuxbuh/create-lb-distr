@@ -12,6 +12,7 @@ cl-builder-prepare --source /var/calculate/linux/cls-$DATE-x86_64.iso --id lb-ba
 cl-builder-update --id lb-base-desktop --scan ON -f -o -C ON
 
 chroot /run/calculate/mount/lb-base-desktop /bin/bash -x <<'EOF'
+cl-core-variables --set update.cl_update_other_set=on
 cd /tmp && wget https://raw.githubusercontent.com/linuxbuh/create-lb-distr/main/create-lb-distr.sh
 bash /tmp/create-lb-distr.sh -lb-add-linuxbuh -lb-base-desktop
 exit
